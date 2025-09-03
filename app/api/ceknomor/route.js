@@ -30,10 +30,10 @@ export async function POST(req) {
       })
     );
 
-    const status =
-      result.users.length > 0
-        ? ` Nomor ${phoneNumber} TERDAFTAR di Telegram`
-        : ` Nomor ${phoneNumber} TIDAK terdaftar di Telegram`;
+   const status =
+  result.users.length > 0
+    ? `✅ Nomor ${phoneNumber} TERDAFTAR di Telegram`
+    : `❌ Nomor ${phoneNumber} TIDAK terdaftar di Telegram`;
 
     return NextResponse.json({ success: true, status });
   } catch (err) {
@@ -41,3 +41,4 @@ export async function POST(req) {
     return NextResponse.json({ success: false, error: err.message });
   }
 }
+
