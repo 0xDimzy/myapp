@@ -39,7 +39,7 @@ export default function Home() {
   };
 
   return (
-    <main className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-100 to-blue-300 text-gray-900 p-4">
+    <main className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-100 to-blue-300 text-gray-900 p-4 relative">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -48,7 +48,9 @@ export default function Home() {
       >
         <div className="flex items-center gap-2 mb-6">
           <Search className="w-6 h-6 text-blue-600" />
-          <h1 className="text-xl font-bold text-gray-800">Cek Nomor Terdaftar Telegram</h1>
+          <h1 className="text-xl font-bold text-gray-800">
+            Cek Nomor Telegram
+          </h1>
         </div>
 
         <input
@@ -77,8 +79,11 @@ export default function Home() {
             {result}
           </motion.p>
         )}
-        <p className="mt-6 text-sm text-gray-500 italic">Made in Sahun</p>
       </motion.div>
+
+      <p className="fixed bottom-4 text-sm text-gray-600 italic">
+        Ini dibuat oleh Sahun El Puter
+      </p>
     </main>
   );
 }
