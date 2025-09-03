@@ -11,7 +11,7 @@ export default function Home() {
 
   const handleCheck = async () => {
     if (!phoneNumber) {
-      setResult("?? Masukkan nomor terlebih dahulu.");
+      setResult("⚠️ Masukkan nomor terlebih dahulu.");
       return;
     }
 
@@ -29,10 +29,10 @@ export default function Home() {
       if (data.success) {
         setResult(data.status);
       } else {
-        setResult(`? Error: ${data.error}`);
+        setResult(`❌ Error: ${data.error}`);
       }
-    } catch (err) {
-      setResult(`? Gagal koneksi ke server: ${err.message}`);
+    } catch (err: any) {
+      setResult(`🚫 Gagal koneksi ke server: ${err.message}`);
     } finally {
       setLoading(false);
     }
@@ -48,7 +48,7 @@ export default function Home() {
       >
         <div className="flex items-center gap-2 mb-6">
           <Search className="w-6 h-6 text-blue-600" />
-          <h1 className="text-xl font-bold text-gray-800">Cek Nomor Telegram</h1>
+          <h1 className="text-xl font-bold text-gray-800">Cek Nomor Terdaftar Telegram</h1>
         </div>
 
         <input
@@ -77,6 +77,7 @@ export default function Home() {
             {result}
           </motion.p>
         )}
+        <p className="mt-6 text-sm text-gray-500 italic">Made in Sahun</p>
       </motion.div>
     </main>
   );
