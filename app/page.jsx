@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Search } from "lucide-react";
+import { Search, Loader2 } from "lucide-react";
 
 export default function Home() {
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -32,6 +32,7 @@ export default function Home() {
         setResult(`❌ Error: ${data.error}`);
       }
     } catch (err) {
+      console.error("Terjadi error:", err);
       setResult(`🚫 Gagal koneksi ke server: ${err.message}`);
     } finally {
       setLoading(false);
@@ -48,7 +49,7 @@ export default function Home() {
       >
         <div className="flex items-center gap-2 mb-6">
           <Search className="w-6 h-6 text-blue-600" />
-          <h1 className="text-xl font-bold text-gray-800">Cek Nomor Terdaftar di Telegram</h1>
+          <h1 className="text-xl font-bold text-gray-800">Cek Nomor Terdaftar Telegram</h1>
         </div>
 
         <input
@@ -62,9 +63,16 @@ export default function Home() {
         <button
           onClick={handleCheck}
           disabled={loading}
-          className="w-full bg-blue-600 hover:bg-blue-700 rounded-xl text-white px-4 py-2 font-semibold disabled:opacity-50"
+          className="w-full bg-blue-600 hover:bg-blue-700 rounded-xl text-white px-4 py-2 font-semibold disabled:opacity-50 flex items-center justify-center gap-2"
         >
-          {loading ? "Mengecek..." : "Cek Nomor"}
+          {loading ? (
+            <>
+              <Loader2 className="w-5 h-5 animate-spin" />
+              Checking...
+            </>
+          ) : (
+            "Cek Nomor"
+          )}
         </button>
 
         {result && (
@@ -85,4 +93,3 @@ export default function Home() {
     </main>
   );
 }
-
