@@ -11,8 +11,8 @@ export default function Home() {
   const [result, setResult] = useState("");
   const [client, setClient] = useState(null);
 
-  const apiId = 27898781; // Ganti dengan API_ID Anda
-  const apiHash = "3a9f389cc8a24bc6d8443296631c3c8d"; // Ganti dengan API_HASH Anda
+  const apiId = 123456; // Ganti dengan API_ID Anda
+  const apiHash = "123456"; // Ganti dengan API_HASH Anda
 
   async function login() {
     const stringSession = new StringSession("");
@@ -83,3 +83,4 @@ export default function Home() {
     </div>
   );
 }
+
