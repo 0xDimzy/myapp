@@ -49,7 +49,7 @@ export default function Home() {
         <div className="flex items-center gap-2 mb-6">
           <Search className="w-6 h-6 text-blue-600" />
           <h1 className="text-xl font-bold text-gray-800">
-            Cek Nomor Telegram
+            Cek Nomor Terdaftar Telegram
           </h1>
         </div>
 
@@ -87,3 +87,4 @@ export default function Home() {
     </main>
   );
 }
+
