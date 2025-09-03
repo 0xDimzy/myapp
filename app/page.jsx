@@ -31,9 +31,9 @@ export default function Home() {
       } else {
         setResult(`❌ Error: ${data.error}`);
       }
-    } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : String(err);
-      setResult(`🚫 Gagal koneksi ke server: ${errorMessage}`);
+    } } catch (err) {
+  setResult(`🚫 Gagal koneksi ke server: ${err.message}`);
+    }
     } finally {
       setLoading(false);
     }
@@ -86,3 +86,4 @@ export default function Home() {
     </main>
   );
 }
+
