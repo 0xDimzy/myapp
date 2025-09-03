@@ -2,8 +2,8 @@ import { TelegramClient } from "telegram";
 import { StringSession } from "telegram/sessions/index.js";
 import input from "input"; // npm install input
 
-const apiId = 27898781; // ganti dengan API_ID Anda
-const apiHash = "3a9f389cc8a24bc6d8443296631c3c8d"; // ganti dengan API_HASH Anda
+const apiId = XXXXXX; // ganti dengan API_ID Anda
+const apiHash = "XXXX"; // ganti dengan API_HASH Anda
 
 const stringSession = new StringSession(""); // kosong dulu
 
@@ -28,3 +28,4 @@ async function main() {
 }
 
 main();
+
