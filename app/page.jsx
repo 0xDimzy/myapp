@@ -31,8 +31,9 @@ export default function Home() {
       } else {
         setResult(`❌ Error: ${data.error}`);
       }
-    } catch (err: any) {
-      setResult(`🚫 Gagal koneksi ke server: ${err.message}`);
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : String(err);
+      setResult(`🚫 Gagal koneksi ke server: ${errorMessage}`);
     } finally {
       setLoading(false);
     }
@@ -48,9 +49,7 @@ export default function Home() {
       >
         <div className="flex items-center gap-2 mb-6">
           <Search className="w-6 h-6 text-blue-600" />
-          <h1 className="text-xl font-bold text-gray-800">
-            Cek Nomor Terdaftar Telegram
-          </h1>
+          <h1 className="text-xl font-bold text-gray-800">Cek Nomor Telegram</h1>
         </div>
 
         <input
@@ -82,11 +81,8 @@ export default function Home() {
       </motion.div>
 
       <p className="fixed bottom-4 text-sm text-gray-600 italic">
-        Ini dibuat oleh Sahun El Puter
+       Dibuat oleh Sahun El Puter
       </p>
     </main>
   );
 }
-
-
-
